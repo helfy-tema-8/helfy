@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
-}
-
 /* --- Header --- */
 header {
   background-color: black;
@@ -214,4 +209,22 @@ nav.active .menu {
 
 .login-box button:hover {
   background-color: #c94205;
+}
+/*FOOTER */
+.grid_1-1 {
+  display: flex;
+}
+.footer-h1 {
+  display: flex;
+  align-items: flex-start;
+}
+.knap-footer {
+  display: flex;
+  gap: 10%;
+  padding-left: 5%;
+}
+hr {
+  padding-left: 5%;
+  padding-right: 70%;
+  gap: 50px;
 }
