@@ -15,28 +15,25 @@ function getData(url) {
     });
 }
 
-// Funktion til at finde unikke mealTypes og lave knapper
 function createCategories(data) {
-  // Lav et sæt til unikke mealType
-  const uniqueMealTypes = new Set();
-
-  data.forEach((recipe) => {
-    recipe.mealType.forEach((type) => uniqueMealTypes.add(type));
-  });
+  const allowedMealTypes = ["Breakfast", "Lunch", "Dinner", "Dessert"]; // rækkefølge
 
   // Tøm containeren først
   categoryContainer.innerHTML = "";
 
-  // Opret knapper for hver unik mealType
-  uniqueMealTypes.forEach((type) => {
-    const a = document.createElement("a");
-    a.href = `opskriftliste.html?mealType=${encodeURIComponent(type)}`;
+  allowedMealTypes.forEach((type) => {
+    // Tjek om mindst én opskrift har denne type
+    const hasType = data.some((recipe) => recipe.mealType.includes(type));
+    if (hasType) {
+      const a = document.createElement("a");
+      a.href = `opskriftliste.html?mealType=${encodeURIComponent(type)}`;
 
-    const button = document.createElement("button");
-    button.textContent = type;
-    button.classList.add(type.toLowerCase().replace(/\s+/g, "_")); // gør klasse brugbar
+      const button = document.createElement("button");
+      button.textContent = type;
+      button.classList.add(type.toLowerCase().replace(/\s+/g, "_")); // gør klasse brugbar
 
-    a.appendChild(button);
-    categoryContainer.appendChild(a);
+      a.appendChild(button);
+      categoryContainer.appendChild(a);
+    }
   });
 }
