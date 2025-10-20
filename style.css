@@ -83,11 +83,12 @@ main h1 {
 }
 
 .mealTypeContainer article {
-  background-color: #fff;
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 5px solid black;
+  color: white;
 }
 
 .sideContainer {
@@ -95,7 +96,6 @@ main h1 {
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
   gap: inherit;
-  background-color: #fff;
   padding: 15px;
   border-radius: 10px;
   text-align: center;
