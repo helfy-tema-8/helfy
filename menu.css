@@ -223,6 +223,7 @@ nav.active .menu {
 footer {
   background-color: black;
   color: white;
+  padding-top: 20px;
 }
 .grid_1-1 {
   display: grid;

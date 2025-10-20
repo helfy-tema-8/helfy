@@ -123,3 +123,21 @@ main h1 {
   line-height: 20px;
   font-size: large;
 }
+.baggrundsbillede {
+  position: fixed; /* Låser baggrunden til hele skærmen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Fylder hele bredden */
+  height: 100%; /* Fylder hele højden */
+  background-image: url("img/streger.png");
+  background-size: cover; /* Fylder hele området */
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2; /* Juster efter behov */
+  z-index: 0;
+}
+h1 {
+  color: white;
+  font-size: 40px;
+  padding-bottom: 50px;
+}
