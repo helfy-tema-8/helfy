@@ -3,33 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 /* Reset og grundlæggende styling */
-
 body {
   background-color: #f0f0f0;
   color: #000000;
 }
-
-/* Header styling */
-header {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-/* Header styling */
-
-/* Footer styling */
-footer {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-top: 40px;
-}
-/* Footer styling */
 
 /* Main styling */
 main {
