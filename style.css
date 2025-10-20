@@ -1,0 +1,98 @@
+/* Reset og grundlæggende styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+/* Reset og grundlæggende styling */
+
+body {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+/* Header styling */
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+/* Header styling */
+
+/* Footer styling */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+/* Footer styling */
+
+/* Main styling */
+main {
+  background-color: #535353;
+  padding: 40px 20px;
+  min-height: 80vh;
+}
+/* Main styling */
+
+/* Overskrift & H1 styling */
+.Opskrifter {
+  color: white;
+  font-size: 50px;
+  padding-bottom: 22px;
+}
+
+main h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* Overskrift & H1 styling */
+
+/* Knapper */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #3d3c3c;
+}
+/* Knapper */
+
+/* Opskrift artikler */
+.mealTypeContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.mealTypeContainer article {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mealTypeContainer img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+/* Opskrift artikler */
