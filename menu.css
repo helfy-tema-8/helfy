@@ -4,13 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a {
+  text-decoration: none;
+}
 /* --- Header --- */
 header {
   background-color: black;
   padding: 20px 40px;
   position: relative;
   z-index: 100;
+  text-decoration: none;
 }
 
 nav {
@@ -22,27 +25,33 @@ nav {
 
 /* --- Log på knap --- */
 .login-btn {
-  color: white;
   border: 2px solid white;
   padding: 10px 20px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
-}
-
-.login-btn:hover {
   background-color: white;
   color: black;
+}
+.login-btn a {
+  color: black;
+}
+.login-btn:hover {
+  background-color: #ef5106;
 }
 
 /* --- Logo --- */
 .logo {
   color: white;
-  font-size: 28px;
+  font-size: 50px;
   font-weight: 700;
+  text-decoration: none;
 }
-
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
 /* --- Burger menu --- */
 .burger {
   width: 30px;
@@ -211,20 +220,45 @@ nav.active .menu {
   background-color: #c94205;
 }
 /*FOOTER */
-.grid_1-1 {
-  display: flex;
+footer {
+  background-color: black;
+  color: white;
 }
-.footer-h1 {
-  display: flex;
-  align-items: flex-start;
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+h4 {
+  position: relative;
+  font-size: 50px;
+  left: 12%;
+  text-align: left;
 }
 .knap-footer {
   display: flex;
   gap: 10%;
-  padding-left: 5%;
+  padding-left: 6%;
+  padding-top: 5%;
 }
 hr {
-  padding-left: 5%;
-  padding-right: 70%;
-  gap: 50px;
+  margin-left: 3%;
+  margin-right: 70%;
+  color: white;
+}
+h3 {
+  font-size: x-large;
+  padding-bottom: 10px;
+}
+.Footer-h1 sup.sub {
+  position: relative;
+  top: 3px;
+  font-size: 1.5rem;
+  vertical-align: baseline;
+  color: white;
+}
+.logo sup.sub {
+  position: relative;
+  top: 3px;
+  font-size: 1.5rem;
+  vertical-align: baseline;
 }
