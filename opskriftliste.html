@@ -2,6 +2,10 @@
 <html lang="da">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpskriftListe</title>
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helfy</title>
@@ -11,6 +15,21 @@
 
 <body>
     <header>
+    </header>
+    <main>
+        <h1 class="Opskrifter">Opskrifter</h1>
+
+        <div class="buttons">
+            <button data-meal-type="All">Alle</button>
+            <button data-meal-type="Breakfast">Morgenmad</button>
+            <button data-meal-type="Lunch">Frokost</button>
+            <button data-meal-type="Dinner">Aftensmad</button>
+        </div>
+
+        <section class="mealTypeContainer"></section>
+    </main>
+    <footer></footer>
+    <script src="opskriftliste.js"></script>
         <nav>
             <a href="#" class="login-btn" id="loginBtn">Log på</a>
             <h1 class="logo">Helfy<sup>©</sup></h1>
