@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpskriftListe</title>
     <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helfy</title>
+    <link rel="stylesheet" href="menu.css">
+
 </head>
 
 <body>
@@ -25,6 +30,38 @@
     </main>
     <footer></footer>
     <script src="opskriftliste.js"></script>
+        <nav>
+            <a href="#" class="login-btn" id="loginBtn">Log på</a>
+            <h1 class="logo">Helfy<sup>©</sup></h1>
+
+            <ul class="menu">
+                <li><a href="#">Forside</a></li>
+                <li><a href="#">Produktliste</a></li>
+                <li><a href="#">Om os</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- LOGIN POPUP -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <h2>Brugernavn:</h2>
+            <input type="text" placeholder="Brugernavn...">
+
+            <h2>Adgangskode:</h2>
+            <input type="password" placeholder="Kode...">
+
+            <button id="closeLogin">Luk</button>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
 </body>
 
 </html>
