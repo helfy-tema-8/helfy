@@ -25,16 +25,27 @@ fetch("https://dummyjson.com/recipes")
 function showRecipe(recipe) {
   mealContainer.innerHTML = `
     <article class="singleRecipe">
+    <img class="opskrift-billede" src="${recipe.image}" alt="${recipe.name}" />
+    <button class="backButton" onclick="window.history.back()">← Tilbage</button>
     <div class="h1-opskrift-single"> 
     <h1>${recipe.name}</h1>
-    </div>
-      <button class="backButton" onclick="window.history.back()">← Tilbage</button>
-      
-      <img src="${recipe.image}" alt="${recipe.name}" />
-      <p><strong>Type:</strong> ${recipe.mealType.join(", ")}</p>
+    </div>  
+    
       <p><strong>Tilberedningstid:</strong> ${recipe.prepTimeMinutes} min</p>
-      <p><strong>Ingredienser:</strong> ${recipe.ingredients.join(", ")}</p>
-      <p><strong>Instruktioner:</strong> ${recipe.instructions}</p>
+  <div class="grid_1-1">
+  <div> 
+  <p><strong>Ingredienser:</strong></p>
+  <ul>
+    ${recipe.ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("")}
+  </ul>
+</div>
+<div> 
+  <p><strong>Instruktioner:</strong></p>
+  <ol>
+    ${recipe.instructions.map((step) => `<li>${step}</li>`).join("")}
+  </ol>
+  </div>
+</div>
     </article>
   `;
 }
