@@ -20,12 +20,9 @@ function filterKlik(evt) {
 
 function showFiltered(filter) {
   if (filter === "All") {
-    // showMealType(allData);
     getData("https://dummyjson.com/recipes/");
   } else {
     getData("https://dummyjson.com/recipes/meal-type/" + filter);
-    // const filteredProd = allData.filter((prod) => prod.mealType.includes(filter));
-    // showMealType(filteredProd);
   }
 }
 
