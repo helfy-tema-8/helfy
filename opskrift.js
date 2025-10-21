@@ -25,8 +25,11 @@ fetch("https://dummyjson.com/recipes")
 function showRecipe(recipe) {
   mealContainer.innerHTML = `
     <article class="singleRecipe">
+    <div class="h1-opskrift-single"> 
+    <h1>${recipe.name}</h1>
+    </div>
       <button class="backButton" onclick="window.history.back()">← Tilbage</button>
-      <h1>${recipe.name}</h1>
+      
       <img src="${recipe.image}" alt="${recipe.name}" />
       <p><strong>Type:</strong> ${recipe.mealType.join(", ")}</p>
       <p><strong>Tilberedningstid:</strong> ${recipe.prepTimeMinutes} min</p>
