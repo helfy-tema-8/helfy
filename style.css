@@ -173,3 +173,32 @@ h1 {
 .dessert {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/dessert.webp");
 }
+
+@media (min-width: 799px) {
+  .category_list_container {
+    flex-direction: row; /* Lægger knapperne på række */
+    flex-wrap: wrap; /* Så de kan gå på ny linje om nødvendigt */
+    justify-content: center; /* Centrerer dem på siden */
+    gap: 40px; /* Lidt luft mellem knapperne */
+  }
+
+  .category_list_container button {
+    width: 322px; /* Gør dem lidt bredere */
+    height: 222px; /* Gør dem højere */
+    font-size: 2rem; /* Større tekst på desktop */
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+
+    display: flex; /* Gør hero til flex-container */
+    flex-direction: column; /* Indholdet stablet lodret */
+    justify-content: center; /* Vertikal centering */
+    align-items: center; /* Horisontal centering */
+  }
+}
