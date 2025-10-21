@@ -25,13 +25,31 @@ fetch("https://dummyjson.com/recipes")
 function showRecipe(recipe) {
   mealContainer.innerHTML = `
     <article class="singleRecipe">
-      <button class="backButton" onclick="window.history.back()">← Tilbage</button>
-      <h1>${recipe.name}</h1>
-      <img src="${recipe.image}" alt="${recipe.name}" />
-      <p><strong>Type:</strong> ${recipe.mealType.join(", ")}</p>
+    <button class="backButton" onclick="window.history.back()">← Tilbage</button>
+    <div class="opskrift-billede"> 
+    <img src="${recipe.image}" alt="${recipe.name}" />
+    </div>
+    
+    <div class="h1-opskrift-single"> 
+    <h1>${recipe.name}</h1>
+    </div>  
+    
       <p><strong>Tilberedningstid:</strong> ${recipe.prepTimeMinutes} min</p>
-      <p><strong>Ingredienser:</strong> ${recipe.ingredients.join(", ")}</p>
-      <p><strong>Instruktioner:</strong> ${recipe.instructions}</p>
+  <div class="grid_1-1">
+  <div> 
+  <p><strong>Ingredienser:</strong></p>
+  <ul>
+    ${recipe.ingredients.map((ingredient) => `<li>${ingredient}</li>`).join("")}
+  </ul>
+</div>
+<div> 
+  <p><strong>Instruktioner:</strong></p>
+  <ol>
+    ${recipe.instructions.map((step) => `<li>${step}</li>`).join("")}
+  </ol>
+  </div>
+</div>
+<h1> Andre gode forslag:</h1>
     </article>
   `;
 }

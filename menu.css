@@ -4,6 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+@media (min-width: 900px) {
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 a {
   text-decoration: none;
 }
@@ -225,10 +231,7 @@ footer {
   color: white;
   padding-top: 20px;
 }
-.grid_1-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+
 h4 {
   position: relative;
   font-size: 50px;
