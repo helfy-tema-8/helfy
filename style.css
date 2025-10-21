@@ -113,7 +113,6 @@ main h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
@@ -122,6 +121,9 @@ main h1 {
   background-position: center;
   width: 440px;
   height: 120px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  color: white;
+  border: solid 2px black;
 }
 
 .category_list_container button:hover {
@@ -152,4 +154,22 @@ h1 {
   font-size: 40px;
   padding-bottom: 50px;
   margin: 0%;
+}
+
+.breakfast {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/morgenmad.webp");
+}
+
+.category_list_container button.lunch {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/frokost.webp");
+  background-size: cover;
+  background-position: center 330px; /* rykker billedet op */
+}
+
+.dinner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/aftensmad.webp");
+}
+
+.dessert {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/dessert.webp");
 }
