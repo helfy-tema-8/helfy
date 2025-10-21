@@ -183,7 +183,9 @@ nav.active .menu {
   position: relative;
   animation: slideUp 0.3s ease;
 }
-
+.nyheder-footer {
+  padding-left: 20%;
+}
 @keyframes slideUp {
   from {
     opacity: 0;
