@@ -1,28 +1,35 @@
-console.log("Hej fra din far");
 const mealType = new URLSearchParams(window.location.search).get("mealType");
+console.log("Hej fra din far", mealType);
+
 const mealTypeContainer = document.querySelector(".mealTypeContainer");
 let allData;
-getData("https://dummyjson.com/recipes");
+
+// Hent data fra API
+getData("https://dummyjson.com/recipes/meal-type/" + mealType);
+
+// Tilføj click events til alle filter-knapper
 document.querySelectorAll(".buttons button").forEach((btn) => {
   btn.addEventListener("click", filterKlik);
 });
 
 function filterKlik(evt) {
-  showFiltered(evt.currentTarget.dataset.mealType);
+  const filter = evt.currentTarget.dataset.mealtype; // små t
+  console.log("Meal type", filter);
+  showFiltered(filter);
 }
 
 function showFiltered(filter) {
-  if (filter == "All") {
-    showMealType(allData);
+  if (filter === "All") {
+    // showMealType(allData);
+    getData("https://dummyjson.com/recipes/");
   } else {
-    const filteredMealType = allData.filter((recipe) => recipe.mealType === filter);
-    showMealType(filteredMealType);
+    getData("https://dummyjson.com/recipes/meal-type/" + filter);
+    // const filteredProd = allData.filter((prod) => prod.mealType.includes(filter));
+    // showMealType(filteredProd);
   }
-
-  console.log("showFiltered", filter);
-  // console.log(allData.filter((prod) => prod.gender === filter));
 }
 
+// Hent data fra API
 function getData(url) {
   fetch(url)
     .then((res) => res.json())
@@ -32,6 +39,7 @@ function getData(url) {
     });
 }
 
+// Vis opskrifter på siden
 function showMealType(mealTypeArray) {
   mealTypeContainer.innerHTML = "";
   mealTypeArray.forEach((recipe) => {
