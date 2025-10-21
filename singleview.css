@@ -1,13 +1,32 @@
 .backButton {
-  position: relative;
   border: 2px solid white;
   padding: 10px 20px;
   border-radius: 6px;
-  text-decoration: none;
+  background-color: black;
+  color: white;
   font-weight: bold;
-  transition: 0.3s;
-  background-color: white;
-  color: black;
-  left: 80%;
-  top: 100%;
+  cursor: pointer;
+
+  float: right; /* skubber knappen til højre */
+  margin-right: 5%; /* giver luft til venstre */
+  margin-top: 2%; /* lidt luft fra toppen */
+}
+
+p,
+ul,
+ol {
+  color: white;
+  padding-left: 5%;
+  padding-top: 10px;
+}
+.opskrift-billede {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  width: 100%;
+}
+.opskrift-billede img {
+  max-width: 100%; /* aldrig bredere end container */
+  height: auto; /* bevar proportioner */
+  display: block;
 }

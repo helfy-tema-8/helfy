@@ -25,8 +25,11 @@ fetch("https://dummyjson.com/recipes")
 function showRecipe(recipe) {
   mealContainer.innerHTML = `
     <article class="singleRecipe">
-    <img class="opskrift-billede" src="${recipe.image}" alt="${recipe.name}" />
     <button class="backButton" onclick="window.history.back()">← Tilbage</button>
+    <div class="opskrift-billede"> 
+    <img src="${recipe.image}" alt="${recipe.name}" />
+    </div>
+    
     <div class="h1-opskrift-single"> 
     <h1>${recipe.name}</h1>
     </div>  
@@ -46,6 +49,7 @@ function showRecipe(recipe) {
   </ol>
   </div>
 </div>
+<h1> Andre gode forslag:</h1>
     </article>
   `;
 }
