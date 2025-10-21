@@ -30,3 +30,63 @@ ol {
   height: auto; /* bevar proportioner */
   display: block;
 }
+
+/* ________________*/
+
+.slider-container {
+  position: relative;
+  width: 780px; /* 3 kort x 250px + 2*15px gap */
+  margin: auto;
+}
+
+.slider-wrapper {
+  overflow: hidden; /* skjuler overskydende kort */
+}
+
+.slider {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card {
+  flex: 0 0 250px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.arrow.left {
+  left: -50px; /* uden for slideren */
+}
+
+.arrow.right {
+  right: -50px; /* uden for slideren */
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
