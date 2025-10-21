@@ -36,11 +36,13 @@ function showMealType(mealTypeArray) {
   mealTypeContainer.innerHTML = "";
   mealTypeArray.forEach((recipe) => {
     mealTypeContainer.innerHTML += `
-      <article>
-        <h2>${recipe.name}</h2>
-        <img src="${recipe.image}" alt="${recipe.name}" width="200" />
-        <p>${recipe.mealType.join(", ")}</p>
-      </article>
+      <a href="opskrift.html?id=${recipe.id}">
+        <article>
+          <h2>${recipe.name}</h2>
+          <img src="${recipe.image}" alt="${recipe.name}" width="200" />
+          <p>${recipe.mealType.join(", ")}</p>
+        </article>
+      </a>
     `;
   });
 }
