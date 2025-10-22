@@ -12,7 +12,7 @@ fetch("https://dummyjson.com/recipes")
     const recipe = allRecipes.find((r) => r.id == recipeId);
 
     if (recipe) {
-      showRecipe(recipe);
+      showRecipe(recipe, allRecipes);
     } else {
       mealContainer.innerHTML = `<p>Could not be able to get the recipe 😢</p>`;
     }
@@ -22,7 +22,7 @@ fetch("https://dummyjson.com/recipes")
     mealContainer.innerHTML = "<p>Could not be able to get the recipe 😢</p>";
   });
 
-function showRecipe(recipe) {
+function showRecipe(recipe, allRecipes) {
   // Tilføj opskrift HTML
   mealContainer.innerHTML = `
     <article class="singleRecipe">
@@ -36,7 +36,7 @@ function showRecipe(recipe) {
         <h1>${recipe.name}</h1>
       </div>  
 
-      <p><strong>preparation time:</strong> ${recipe.prepTimeMinutes} min</p>
+      <p><strong>Preparation time:</strong> ${recipe.prepTimeMinutes} min</p>
 
       <div class="grid_1-1">
         <div> 
@@ -57,35 +57,47 @@ function showRecipe(recipe) {
 
       <div class="slider-container">
         <div class="arrow left">&#10094;</div>
-
         <div class="slider-wrapper">
-          <div class="slider">
-            <div class="card">1</div>
-            <div class="card">2</div>
-            <div class="card">3</div>
-            <div class="card">4</div>
-            <div class="card">5</div>
-            <div class="card">6</div>
-          </div>
+          <div class="slider" id="suggestion-slider"></div>
         </div>
-
         <div class="arrow right">&#10095;</div>
       </div>
     </article>
   `;
 
   // ------------------------
+  // Indsæt andre opskrifter i slideren
+  // ------------------------
+  const slider = document.getElementById("suggestion-slider");
+  const suggestions = allRecipes
+    .filter((r) => r.id != recipe.id) // Fjern den aktuelle opskrift
+    .sort(() => 0.5 - Math.random()) // Bland rækkefølgen
+    .slice(0, 6); // Tag fx 6 forslag
+
+  slider.innerHTML = suggestions
+    .map(
+      (r) => `
+      <div class="card">
+        <a href="opskrift.html?id=${r.id}">
+          <article>
+            <h2>${r.name}</h2>
+            <img src="${r.image}" alt="${r.name}" width="200" />
+            <p>${r.tags ? r.tags.join(", ") : ""}</p>
+          </article>
+        </a>
+      </div>`
+    )
+    .join("");
+
+  // ------------------------
   // Slider funktionalitet
   // ------------------------
-  const slider = document.querySelector(".slider");
   const leftArrow = document.querySelector(".arrow.left");
   const rightArrow = document.querySelector(".arrow.right");
 
-  if (!slider || !leftArrow || !rightArrow) return; // sikkerhed
-
-  const cardWidth = 250; // bredde på ét kort
-  const gap = 15; // mellemrum mellem kort
-  const visibleCards = 3; // hvor mange kort vi viser ad gangen
+  const cardWidth = 250;
+  const gap = 15;
+  const visibleCards = 3;
   let position = 0;
 
   rightArrow.addEventListener("click", () => {

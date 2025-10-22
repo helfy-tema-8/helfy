@@ -1,3 +1,5 @@
+/* ------------------------ */
+/* BACK BUTTON */
 .backButton {
   border: 2px solid white;
   padding: 10px 20px;
@@ -7,11 +9,12 @@
   font-weight: bold;
   cursor: pointer;
 
-  float: right; /* skubber knappen til højre */
-  margin-right: 5%; /* giver luft til venstre */
-  margin-top: 2%; /* lidt luft fra toppen */
+  float: right;
+  margin-right: 5%;
+  margin-top: 2%;
 }
 
+/* TEKST STYLING */
 p,
 ul,
 ol {
@@ -19,29 +22,34 @@ ol {
   padding-left: 5%;
   padding-top: 10px;
 }
+
+/* OPSKRIFT BILLEDE */
 .opskrift-billede {
   display: flex;
   justify-content: center;
   padding-top: 10px;
   width: 100%;
 }
+
 .opskrift-billede img {
-  max-width: 100%; /* aldrig bredere end container */
-  height: auto; /* bevar proportioner */
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* ________________*/
-
+/* ------------------------ */
+/* SLIDER CONTAINER */
 .slider-container {
   position: relative;
-  width: 780px; /* 3 kort x 250px + 2*15px gap */
+  width: 100%;
+  max-width: 1000px; /* maks bredde på slider */
   margin: auto;
   padding-bottom: 20px;
 }
 
 .slider-wrapper {
-  overflow: hidden; /* skjuler overskydende kort */
+  overflow: hidden;
+  padding: 0 15px; /* luft på siderne, så yderste cards ikke klippes */
 }
 
 .slider {
@@ -50,18 +58,7 @@ ol {
   transition: transform 0.3s ease;
 }
 
-.card {
-  flex: 0 0 250px;
-  height: 150px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-}
-
+/* ARROWS */
 .arrow {
   position: absolute;
   top: 50%;
@@ -81,13 +78,108 @@ ol {
 }
 
 .arrow.left {
-  left: -50px; /* uden for slideren */
+  left: -40px;
 }
 
 .arrow.right {
-  right: -50px; /* uden for slideren */
+  right: -40px;
 }
 
 .arrow:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------------ */
+/* CARDS STYLING */
+.slider .card {
+  position: relative;
+  background-color: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  min-width: 250px;
+  flex: 0 0 auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  color: white;
+}
+
+/* HOVER EFFECT */
+.slider .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* CARD IMAGE */
+.slider .card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+/* IMAGE HOVER ZOOM */
+.slider .card:hover img {
+  transform: scale(1.05);
+}
+
+/* GRADIENT OVERLAY */
+.slider .card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  pointer-events: none;
+}
+
+/* CARD CONTENT */
+.slider .card article {
+  padding: 10px 12px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.slider .card h2 {
+  font-size: 1.2rem;
+  margin: 8px 0 4px 0;
+}
+
+.slider .card p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.slider .card a {
+  color: inherit; /* arver farven fra kortet (hvid) */
+  text-decoration: none; /* fjern understregning */
+}
+
+/* ------------------------ */
+/* RESPONSIVE */
+@media (max-width: 799px) {
+  .slider-container {
+    width: 100%;
+  }
+
+  .slider .card {
+    min-width: 200px;
+  }
+
+  .slider .card img {
+    height: 130px;
+  }
+
+  .arrow.left {
+    left: -30px;
+  }
+
+  .arrow.right {
+    right: -30px;
+  }
 }
