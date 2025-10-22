@@ -37,6 +37,7 @@ ol {
   position: relative;
   width: 780px; /* 3 kort x 250px + 2*15px gap */
   margin: auto;
+  padding-bottom: 20px;
 }
 
 .slider-wrapper {

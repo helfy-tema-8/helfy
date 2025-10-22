@@ -14,19 +14,19 @@ fetch("https://dummyjson.com/recipes")
     if (recipe) {
       showRecipe(recipe);
     } else {
-      mealContainer.innerHTML = `<p>Opskriften blev ikke fundet 😢</p>`;
+      mealContainer.innerHTML = `<p>Could not be able to get the recipe 😢</p>`;
     }
   })
   .catch((err) => {
     console.error("Fejl ved hentning:", err);
-    mealContainer.innerHTML = "<p>Kunne ikke hente opskriften 😢</p>";
+    mealContainer.innerHTML = "<p>Could not be able to get the recipe 😢</p>";
   });
 
 function showRecipe(recipe) {
   // Tilføj opskrift HTML
   mealContainer.innerHTML = `
     <article class="singleRecipe">
-      <button class="backButton" onclick="window.history.back()">← Tilbage</button>
+      <button class="backButton" onclick="window.history.back()">← Back</button>
 
       <div class="opskrift-billede"> 
         <img src="${recipe.image}" alt="${recipe.name}" />
@@ -36,24 +36,24 @@ function showRecipe(recipe) {
         <h1>${recipe.name}</h1>
       </div>  
 
-      <p><strong>Tilberedningstid:</strong> ${recipe.prepTimeMinutes} min</p>
+      <p><strong>preparation time:</strong> ${recipe.prepTimeMinutes} min</p>
 
       <div class="grid_1-1">
         <div> 
-          <p><strong>Ingredienser:</strong></p>
+          <p><strong>Ingredients:</strong></p>
           <ul>
             ${recipe.ingredients.map((i) => `<li>${i}</li>`).join("")}
           </ul>
         </div>
         <div> 
-          <p><strong>Instruktioner:</strong></p>
+          <p><strong>Instructions:</strong></p>
           <ol>
             ${recipe.instructions.map((step) => `<li>${step}</li>`).join("")}
           </ol>
         </div>
       </div>
 
-      <h1>Andre gode forslag:</h1>
+      <h1>Other good suggestions:</h1>
 
       <div class="slider-container">
         <div class="arrow left">&#10094;</div>
