@@ -42,11 +42,13 @@ function showMealType(mealTypeArray) {
   mealTypeArray.forEach((recipe) => {
     mealTypeContainer.innerHTML += `
       <a href="opskrift.html?id=${recipe.id}">
+      <div class=card_hover>
         <article>
-          <h2>${recipe.name}</h2>
+          <h2 class="sorttekst">${recipe.name}</h2>
           <img src="${recipe.image}" alt="${recipe.name}" width="200" />
-          <p>${recipe.mealType.join(", ")}</p>
+          <p class="sorttekst">${recipe.mealType.join(", ")}</p>
         </article>
+         </div>
       </a>
     `;
   });

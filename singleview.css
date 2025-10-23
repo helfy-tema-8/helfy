@@ -13,14 +13,17 @@
   margin-right: 5%;
   margin-top: 2%;
 }
-
+.h1-opskrift-single {
+  color: white;
+  font-size: 40px;
+}
 /* TEKST STYLING */
 p,
 ul,
 ol {
   color: white;
-  padding-left: 5%;
-  padding-top: 10px;
+  padding-left: 15%;
+  margin-bottom: 20px;
 }
 
 /* OPSKRIFT BILLEDE */
@@ -32,9 +35,10 @@ ol {
 }
 
 .opskrift-billede img {
-  max-width: 100%;
+  max-width: 500px;
   height: auto;
   display: block;
+  border: 2px solid black;
 }
 
 /* ------------------------ */

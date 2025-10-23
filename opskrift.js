@@ -31,9 +31,9 @@ function showRecipe(recipe, allRecipes) {
       <div class="opskrift-billede"> 
         <img src="${recipe.image}" alt="${recipe.name}" />
       </div>
-      
       <div class="h1-opskrift-single"> 
         <h1>${recipe.name}</h1>
+
       </div>  
 
       <p><strong>Preparation time:</strong> ${recipe.prepTimeMinutes} min</p>
@@ -52,6 +52,7 @@ function showRecipe(recipe, allRecipes) {
           </ol>
         </div>
       </div>
+              <hr class="stregunder">
 
       <h1>Other good suggestions:</h1>
 
